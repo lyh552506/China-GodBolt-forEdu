@@ -17,7 +17,7 @@ const { availableLocales, locale } = useI18n()
 				dark="bg-transparent hover:bg-gray-500"
 				:class="visiable ? 'bg-gray-200 bg-gray-500 dark:bg-gray-500' : ''"
 				@click.stop="visiable = !visiable"
-			>
+			><slot></slot>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-4 w-4"
