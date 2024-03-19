@@ -20,16 +20,73 @@ const routes = getRoutes()
 	})
 
 const $route = useRoute()
+const { availableLocales, locale } = useI18n()
+const options = ['Source Editor', 'Diff View']
+const options_2 = ['History', 'Open New Tab']
 </script>
 
 <template>
 	<nav
 		aria-label="Site Nav"
-		class="mx-auto h-60px max-w-8xl flex items-center justify-between p-4 nav"
+		class="mx-auto h-14 max-w-8xl flex items-center justify-between p-4 nav"
 	>
-		<div class="flex items-center justify-center space-x-5">
-			logo位置
-			<Dropdown><p>添加</p></Dropdown>
+		<div class="flex items-center justify-center space-x-2">
+			<a href="#" class="w-30 h-full">logo</a>
+			<Dropdown
+				><template #up><div>新建</div></template>
+				<template #down>
+					<span
+						v-for="option of options"
+						:key="option"
+						class="block cursor-pointer rounded-lg px-4 py-2 text-sm text-gray-500 hover:text-gray-90 hover:bg-gray-100"
+						dark="text-light-500 hover:text-light-900 hover:bg-gray-400"
+					>
+						<span
+							:class="
+								option == 'Source Editor'
+									? 'i-ic:baseline-edit-calendar'
+									: 'i-octicon:git-compare-16'
+							"
+							class="h-5 w-5 justify-center align-middle mr-2"
+							style="display: inline-block"
+						></span>
+						{{ option }}
+					</span></template
+				></Dropdown
+			>
+			<Dropdown
+				><template #up><div>更多</div></template>
+				<template #down
+					><span
+						v-for="option of options_2"
+						:key="option"
+						class="block cursor-pointer rounded-lg text-sm text-gray-500 hover:text-gray-90 hover:bg-gray-100"
+						dark="text-light-500 hover:text-light-900 hover:bg-gray-400"
+					>
+						<div v-if="option === 'Open New Tab'" class="w-full h-full">
+							<router-link
+								class="w-full h-full px-4 py-2"
+								style="display: block"
+								to="/"
+								target="_blank"
+							>
+								<sapn
+									class="i-icon-park-twotone:add-one h-5 w-5 justify-center align-middle mr-2"
+									style="display: inline-block"
+								></sapn
+								>{{ option }}</router-link
+							>
+						</div>
+						<div v-else class="w-full h-full px-4 py-2">
+							<sapn
+								class="i-fluent-emoji-high-contrast:calendar h-5 w-5 justify-center align-middle mr-2"
+								style="display: inline-block"
+							></sapn
+							>{{ option }}
+						</div>
+					</span></template
+				></Dropdown
+			>
 		</div>
 
 		<ul class="flex items-center gap-2 text-sm font-medium">
@@ -114,11 +171,30 @@ const $route = useRoute()
 							/>
 						</rect>
 					</svg>
+					<p class="font-normal ml--4">联系我们</p>
 				</a>
 			</li>
 
 			<li class="hidden !block">
-				<Dropdown />
+				<Dropdown
+					><template #up><div>语言</div></template>
+					<template #down
+						><span
+							v-for="availableLocale of availableLocales"
+							:key="availableLocale"
+							:class="
+								locale === availableLocale
+									? 'bg-gray-100 text-gray-800 dark:bg-gray-400'
+									: ''
+							"
+							class="block cursor-pointer rounded-lg px-4 py-2 text-sm text-gray-500 hover:text-gray-900"
+							dark="text-light-500 hover:text-light-900"
+							@click="locale = availableLocale"
+						>
+							{{ availableLocale }}
+						</span></template
+					></Dropdown
+				>
 			</li>
 		</ul>
 	</nav>

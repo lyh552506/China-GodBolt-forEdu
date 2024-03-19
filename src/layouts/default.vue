@@ -1,6 +1,6 @@
 <template>
 	<Navigation />
-	<div class="w-screen flex flex-col items-center justify-center">
+	<div class="w-screen h-153 flex   justify-left ">
 		<router-view v-slot="{ Component }">
 			<transition name="fade" mode="out-in">
 				<component :is="Component" />

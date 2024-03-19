@@ -1,6 +1,23 @@
 @import './md.css';
 
+/* 间隔 */
+.myresize {
+	&:hover {
+		background-color: #bbbbbb;
+		cursor: w-resize;
+	}
+	background-color: transparent;
+}
 
+body{
+	-webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+html {
+	background-color: #f8f9fa;
+}
 html.dark {
 	background: #100c2a !important;
 }
