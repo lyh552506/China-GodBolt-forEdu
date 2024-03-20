@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { vOnClickOutside } from '@vueuse/components'
-import { useGlobalState } from 'src/composables/toggle'
 const visiable = ref(false)
 function dropdownHandler() {
 	visiable.value = false

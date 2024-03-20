@@ -1,7 +1,11 @@
 <script setup lang="ts">
+
 import { useElementBounding, useDraggable } from '@vueuse/core'
 import { kMaxLength } from 'buffer'
-
+const visiable = ref(false)
+function dropdownHandler() {
+	visiable.value = false
+}
 const editbox = ref(null)
 const gooder = ref(null)
 
@@ -109,11 +113,61 @@ const onMouseUp = () => {
 					></span>
 				</div>
 			</div>
-			<div style="background-color: #f8f9fa" class="optionchoose h-11 w-full">
+			<div style="background-color: #f8f9fa" class="optionchoose h-11 w-full flex justify-between">
+				<!-- 各种按钮区域 -->
+				<Optionchoose
+				><template #up><button
+				class=" w-10 h-10 cursor-pointer border-0 bg-white p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+				dark="bg-transparent hover:bg-gray-500"
+				:class="
+					visiable
+						? 'bg-gray-200 bg-gray-500 dark:bg-gray-500'
+						: 'bg-gray-200 bg-gray-500 dark:bg-gray-500'
+				"
+				@click.stop="visiable = !visiable"
+			>
+			<span class="i-ri:font-family text-black w-5 h-5 inline-block ml--4 items-center flex"></span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-4 w-4 mt-1 ml-4"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</button></template>
+				<template #down>
+					<span
+						v-for="option of options"
+						:key="option"
+						class="block cursor-pointer rounded-lg px-4 py-2 text-sm text-gray-500 hover:text-gray-90 hover:bg-gray-100"
+						dark="text-light-500 hover:text-light-900 hover:bg-gray-400"
+					>
+						<span
+							:class="
+								option == 'Source Editor'
+									? 'i-ic:baseline-edit-calendar'
+									: 'i-octicon:git-compare-16'
+							"
+							class="h-5 w-5 justify-center align-middle mr-2"
+							style="display: inline-block"
+						></span>
+						{{ option }}
+					</span></template
+				></Optionchoose
+			>
 				<div
 					name="languageoption"
-					class="bg-white h-full w-42 float-right rounded-md cursor-pointer flex justify-center items-center"
-				></div>
+					class="rounded-lg bg-white h-full w-42 float-right border-1 cursor-pointer bord  text-size-4 text-color-#343a40"
+				>
+			<img src="../assets/img/C++.png" alt="languangeoption" class="h-full inline-block ml-2">
+		<span class="pl-1 inline-block h-3 translate-y-0.7">C++</span>
+		<span class="float-right i-fluent:triangle-down-32-filled h-3 w-3 justify-center align-middle mr-2 mt-4 text-black"></span>
+	</div>
 			</div>
 			dfgdfsgsdgfsdfasdfsdafsdfsdfsdafsd
 		</div>
@@ -169,7 +223,7 @@ const onMouseUp = () => {
 	</div>
 </template>
 
-<style>
+<style scoped>
 .logo {
 	width: 10em;
 	height: 10em;

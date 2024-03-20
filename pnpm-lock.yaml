@@ -13,6 +13,9 @@ devDependencies:
   '@iconify-json/ep':
     specifier: ^1.1.15
     version: 1.1.15
+  '@iconify-json/fluent':
+    specifier: ^1.1.50
+    version: 1.1.50
   '@iconify-json/fluent-emoji-high-contrast':
     specifier: ^1.1.15
     version: 1.1.15
@@ -31,6 +34,9 @@ devDependencies:
   '@iconify-json/octicon':
     specifier: ^1.1.52
     version: 1.1.52
+  '@iconify-json/ri':
+    specifier: ^1.1.20
+    version: 1.1.20
   '@intlify/unplugin-vue-i18n':
     specifier: ^2.0.0
     version: 2.0.0(vue-i18n@9.10.1)
@@ -933,6 +939,12 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify-json/fluent@1.1.50:
+    resolution: {integrity: sha512-f7VOoWVAOo79dq76JQqYi3s/yXDIhM4YNky+NoX9KttyxSygS/gEPrlJCTP0WH1GdSScCjCE/dvEcliBfH+lZg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/ic@1.1.17:
     resolution: {integrity: sha512-EvAjZzVESmN36zlyefylePUNaU2BQ3eRKVZ6KQSQ2bG01ppoZaiFZRri74VTyvp5Mlv2yn68ux1fgCoT+etGmA==}
     dependencies:
@@ -959,6 +971,12 @@ packages:
 
   /@iconify-json/octicon@1.1.52:
     resolution: {integrity: sha512-0bLc9t54p55nVlQ8SKF7BYOBTy/Q5SfvqYcOD09APDksRTikO45MwKTfG3fzkbaIwpobuVQM1sXiSCsyWJX9Tg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ri@1.1.20:
+    resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
