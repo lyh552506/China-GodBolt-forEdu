@@ -10,6 +10,9 @@ dependencies:
     version: 2.6.1(vue@3.4.21)
 
 devDependencies:
+  '@iconify-json/bxs':
+    specifier: ^1.1.10
+    version: 1.1.10
   '@iconify-json/ep':
     specifier: ^1.1.15
     version: 1.1.15
@@ -37,6 +40,9 @@ devDependencies:
   '@iconify-json/ri':
     specifier: ^1.1.20
     version: 1.1.20
+  '@iconify-json/vscode-icons':
+    specifier: ^1.1.33
+    version: 1.1.33
   '@intlify/unplugin-vue-i18n':
     specifier: ^2.0.0
     version: 2.0.0(vue-i18n@9.10.1)
@@ -927,6 +933,12 @@ packages:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
     dev: true
 
+  /@iconify-json/bxs@1.1.10:
+    resolution: {integrity: sha512-USVukTRq5PDT3KVVePYzHgYBtO9PYi4oNFuBpMf/Q1BFHAiwyP8zVewgXR1a6w/XMDIiQ3gVuTX7upkXv7cjgw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/ep@1.1.15:
     resolution: {integrity: sha512-96JBJQrJhxYy+j+KE5lqyE+Y6O+06fVUdMaHJ1Rb9+bbOjI1tw6EwYl9H4SB6Hkf7zB80VX6GgG0yH0Z0c8K1Q==}
     dependencies:
@@ -977,6 +989,12 @@ packages:
 
   /@iconify-json/ri@1.1.20:
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/vscode-icons@1.1.33:
+    resolution: {integrity: sha512-Aj1SoViQ5dw9hrYc4PHK8/vHpZREUA158jhnyNsD95uhN40mmeLuq+4o9OxiSakgLlac9R5OKpnp8tHTCgMhCA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

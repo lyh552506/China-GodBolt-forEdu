@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getRoutes } from '@/plugins/router'
 import { SwitchIcon } from 'vue-dark-switch'
-
+import { onClickOutside } from '@vueuse/core'
 const { te, t } = useI18n()
 
 const routes = getRoutes()
@@ -32,7 +32,7 @@ const options_2 = ['History', 'Open New Tab']
 	>
 		<div class="flex items-center justify-center space-x-2">
 			<a href="#" class="w-30 h-full">logo</a>
-			<Dropdown
+			<Dropdown ref="target"
 				><template #up><div>新建</div></template>
 				<template #down>
 					<span
